@@ -27,13 +27,7 @@ display: none;
   order: -1;
 }
 /* ───────────────────────── Collapsible SIDE BARS ───────────────────────── */
-:root{
-  --chat-translate: 491px;
-  --panel-expanded: 356px;        /* full panel visual width */
-  --sidebar-expanded: 300px;
-  --transition-fast: 200ms cubic-bezier(0.165,0.84,0.44,1);
-  --Voicechat-Offset: 1px
-}
+
 /* ───────────────────────── Left Siderbar (Server list) ───────────────────────── */
 .sidebarList__5e434 {
   position: fixed;

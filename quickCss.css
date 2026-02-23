@@ -32,6 +32,7 @@ display: none;
   --panel-expanded: 356px;        /* full panel visual width */
   --sidebar-expanded: 300px;
   --transition-fast: 200ms cubic-bezier(0.165,0.84,0.44,1);
+  --Voicechat-Offset: 1px
 }
 /* ───────────────────────── Left Siderbar (Server list) ───────────────────────── */
 .sidebarList__5e434 {
@@ -182,7 +183,7 @@ display: none;
   right: 0;                         /* anchor at right */
   height: 975px;
   width: fit-content; /* <— key part: automatically fit to child’s width */
-  transform: translateX(calc(100% - 1px)); /* move by its own width minus 1px */
+  transform: translateX(calc(100% - var(--Voicechat-Offset))); /* move by its own width minus 1px */
   opacity: 0;
   z-index: 999;
   filter: drop-shadow(-8px 0 18px rgba(0,0,0,0.22)); /* subtle right-side shadow */

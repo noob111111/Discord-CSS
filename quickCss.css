@@ -1,6 +1,8 @@
-/* HIDE TOP BAR */
 @import url('https://raw.githubusercontent.com/G0d0fninjas/visual-refresh-compact-title-bar/refs/heads/experimental/desktop.css');
 @import url("https://raw.githubusercontent.com/scattagain/VencordStuff/4fa465629d6d71092c20aa11245abb6ad4a44641/css/GuildbarRevert.css");
+.bar_c38106 {
+  width: 80%!important;
+}
 /* SEARCH BAR MARGIN */
 .searchBar__97492 {
   margin-right: 75px;
@@ -32,7 +34,7 @@ display: none;
   --panel-expanded: 356px;        /* full panel visual width */
   --sidebar-expanded: 300px;
   --transition-fast: 200ms cubic-bezier(0.165,0.84,0.44,1);
-  --Voicechat-Offset: 1px
+
 }
 /* ───────────────────────── Left Siderbar (Server list) ───────────────────────── */
 .sidebarList__5e434 {
@@ -58,12 +60,12 @@ display: none;
   will-change: width, transform, opacity;
 }
 
-
 /* ACTIVE STATE */
 .sidebarList__5e434:hover,
 .guilds__5e434:hover ~ .sidebarList__5e434,
 .sidebarList__5e434:has(~ .sidebarResizeHandle__5e434:hover),
-.sidebarList__5e434:has(~ .panels__5e434:hover) {
+.sidebarList__5e434:has(~ .panels__5e434:hover),
+.sidebarList__5e434:has(.container_f37cb1:hover) {
   transform: translateX(70px);
   width: 300px;
   opacity: 1;
@@ -183,7 +185,7 @@ display: none;
   right: 0;                         /* anchor at right */
   height: 975px;
   width: fit-content; /* <— key part: automatically fit to child’s width */
-  transform: translateX(calc(100% - var(--Voicechat-Offset))); /* move by its own width minus 1px */
+  transform: translateX(calc(100% - var(--Voicechat-Offset, 1px))); /* move by its own width minus 1px */
   opacity: 0;
   z-index: 999;
   filter: drop-shadow(-8px 0 18px rgba(0,0,0,0.22)); /* subtle right-side shadow */
@@ -231,4 +233,29 @@ display: none;
 }
 .list_c3cd7d {
   padding-left: 8px;
+}
+
+@keyframes na-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ───────────────────────── from michael ──────────────────────────────────  */
+
+div[class*="chatContent"],
+main[class*="chatContent"] {
+  animation: na-fade-in 0.2s ease forwards;
+}
+
+div[class*="blobContainer"]:hover {
+  will-change: transform;
+  animation: wobble 1s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+}
+@keyframes wobble {
+  from {
+    transform: scale(1.12) rotate(20deg);
+  }
+  to {
+    transform: scale(1.12) rotate(-20deg);
+  }
 }
